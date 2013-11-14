@@ -1,0 +1,1607 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="JXCModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="JXCModelStoreContainer">
+          <EntitySet Name="T_Customer" EntityType="JXCModel.Store.T_Customer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_Delivery" EntityType="JXCModel.Store.T_Delivery" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_Deploy" EntityType="JXCModel.Store.T_Deploy" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_Dictionary" EntityType="JXCModel.Store.T_Dictionary" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_Finance" EntityType="JXCModel.Store.T_Finance" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_InOutLibrary" EntityType="JXCModel.Store.T_InOutLibrary" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_InOutLibraryDetail" EntityType="JXCModel.Store.T_InOutLibraryDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_Inventory" EntityType="JXCModel.Store.T_Inventory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_InventoryDetail" EntityType="JXCModel.Store.T_InventoryDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_Object" EntityType="JXCModel.Store.T_Object" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_Orders" EntityType="JXCModel.Store.T_Orders" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_OrdersDetail" EntityType="JXCModel.Store.T_OrdersDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_Person" EntityType="JXCModel.Store.T_Person" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_Product" EntityType="JXCModel.Store.T_Product" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_SalesBonus" EntityType="JXCModel.Store.T_SalesBonus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_SamplesStore" EntityType="JXCModel.Store.T_SamplesStore" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_Stock" EntityType="JXCModel.Store.T_Stock" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_StockDetail" EntityType="JXCModel.Store.T_StockDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_User" EntityType="JXCModel.Store.T_User" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_T_CUSTOM_REFERENCE_T_OBJECT" Association="JXCModel.Store.FK_T_CUSTOM_REFERENCE_T_OBJECT">
+            <End Role="T_Object" EntitySet="T_Object" />
+            <End Role="T_Customer" EntitySet="T_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_DELIVE_REFERENCE_T_ORDERS" Association="JXCModel.Store.FK_T_DELIVE_REFERENCE_T_ORDERS">
+            <End Role="T_Orders" EntitySet="T_Orders" />
+            <End Role="T_Delivery" EntitySet="T_Delivery" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_DELIVE_REFERENCE_T_PRODUC" Association="JXCModel.Store.FK_T_DELIVE_REFERENCE_T_PRODUC">
+            <End Role="T_Product" EntitySet="T_Product" />
+            <End Role="T_Delivery" EntitySet="T_Delivery" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_DEPLOY_REFERENCE_T_PRODUC" Association="JXCModel.Store.FK_T_DEPLOY_REFERENCE_T_PRODUC">
+            <End Role="T_Product" EntitySet="T_Product" />
+            <End Role="T_Deploy" EntitySet="T_Deploy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_INLIBR_REFERENCE_T_INLIBR" Association="JXCModel.Store.FK_T_INLIBR_REFERENCE_T_INLIBR">
+            <End Role="T_InOutLibrary" EntitySet="T_InOutLibrary" />
+            <End Role="T_InOutLibraryDetail" EntitySet="T_InOutLibraryDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_INLIBR_REFERENCE_T_PRODUC" Association="JXCModel.Store.FK_T_INLIBR_REFERENCE_T_PRODUC">
+            <End Role="T_Product" EntitySet="T_Product" />
+            <End Role="T_InOutLibraryDetail" EntitySet="T_InOutLibraryDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_INVENT_REFERENCE_T_INVENT" Association="JXCModel.Store.FK_T_INVENT_REFERENCE_T_INVENT">
+            <End Role="T_Inventory" EntitySet="T_Inventory" />
+            <End Role="T_InventoryDetail" EntitySet="T_InventoryDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_INVENT_REFERENCE_T_PRODUC" Association="JXCModel.Store.FK_T_INVENT_REFERENCE_T_PRODUC">
+            <End Role="T_Product" EntitySet="T_Product" />
+            <End Role="T_InventoryDetail" EntitySet="T_InventoryDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_ORDERS_REFERENCE_T_CUSTOM" Association="JXCModel.Store.FK_T_ORDERS_REFERENCE_T_CUSTOM">
+            <End Role="T_Customer" EntitySet="T_Customer" />
+            <End Role="T_Orders" EntitySet="T_Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_ORDERS_REFERENCE_T_PERSON" Association="JXCModel.Store.FK_T_ORDERS_REFERENCE_T_PERSON">
+            <End Role="T_Person" EntitySet="T_Person" />
+            <End Role="T_Orders" EntitySet="T_Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_ORDERS_REFERENCE_T_PRODUC" Association="JXCModel.Store.FK_T_ORDERS_REFERENCE_T_PRODUC">
+            <End Role="T_Product" EntitySet="T_Product" />
+            <End Role="T_OrdersDetail" EntitySet="T_OrdersDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_PERSON_REFERENCE_T_OBJECT" Association="JXCModel.Store.FK_T_PERSON_REFERENCE_T_OBJECT">
+            <End Role="T_Object" EntitySet="T_Object" />
+            <End Role="T_Person" EntitySet="T_Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_SALESB_REFERENCE_T_PERSON" Association="JXCModel.Store.FK_T_SALESB_REFERENCE_T_PERSON">
+            <End Role="T_Person" EntitySet="T_Person" />
+            <End Role="T_SalesBonus" EntitySet="T_SalesBonus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_SAMPLE_REFERENCE_T_PRODUC" Association="JXCModel.Store.FK_T_SAMPLE_REFERENCE_T_PRODUC">
+            <End Role="T_Product" EntitySet="T_Product" />
+            <End Role="T_SamplesStore" EntitySet="T_SamplesStore" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_STOCK_REFERENCE_T_PRODUC" Association="JXCModel.Store.FK_T_STOCK_REFERENCE_T_PRODUC">
+            <End Role="T_Product" EntitySet="T_Product" />
+            <End Role="T_Stock" EntitySet="T_Stock" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_STOCKD_REFERENCE_T_STOCK" Association="JXCModel.Store.FK_T_STOCKD_REFERENCE_T_STOCK">
+            <End Role="T_Stock" EntitySet="T_Stock" />
+            <End Role="T_StockDetail" EntitySet="T_StockDetail" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="T_Customer">
+          <Key>
+            <PropertyRef Name="F_CustomerID" />
+          </Key>
+          <Property Name="F_CustomerID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="F_CustomerName" Type="nvarchar" MaxLength="100" />
+          <Property Name="F_Sex" Type="tinyint" />
+          <Property Name="F_Contact" Type="nvarchar" MaxLength="20" />
+          <Property Name="F_Phone" Type="varchar" MaxLength="20" />
+          <Property Name="F_Tel" Type="varchar" MaxLength="20" />
+          <Property Name="F_DeliveryAddress" Type="nvarchar" MaxLength="100" />
+          <Property Name="F_Bank" Type="uniqueidentifier" />
+          <Property Name="F_Card" Type="varchar" MaxLength="50" />
+          <Property Name="F_ObjectID" Type="uniqueidentifier" />
+          <Property Name="F_Remark" Type="nvarchar" MaxLength="200" />
+          <Property Name="F_Status" Type="tinyint" />
+          <Property Name="F_AddUser" Type="uniqueidentifier" />
+          <Property Name="F_AddDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_Delivery">
+          <Key>
+            <PropertyRef Name="F_DeliveryID" />
+          </Key>
+          <Property Name="F_DeliveryID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="F_OrderID" Type="uniqueidentifier" />
+          <Property Name="F_ProductID" Type="uniqueidentifier" />
+          <Property Name="F_DeliveryPerson" Type="uniqueidentifier" />
+          <Property Name="F_Num" Type="int" />
+          <Property Name="F_DeliveryMoney" Type="decimal" />
+          <Property Name="F_Status" Type="tinyint" />
+          <Property Name="F_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_Deploy">
+          <Key>
+            <PropertyRef Name="F_ID" />
+          </Key>
+          <Property Name="F_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="F_WarehouseID" Type="uniqueidentifier" />
+          <Property Name="F_StoreID" Type="uniqueidentifier" />
+          <Property Name="F_ProductID" Type="uniqueidentifier" />
+          <Property Name="F_DeployType" Type="tinyint" />
+          <Property Name="F_Num" Type="int" />
+          <Property Name="F_User" Type="uniqueidentifier" />
+          <Property Name="F_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_Dictionary">
+          <Key>
+            <PropertyRef Name="F_DictionaryID" />
+          </Key>
+          <Property Name="F_DictionaryID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="F_DicName" Type="nvarchar" MaxLength="50" />
+          <Property Name="F_ParID" Type="uniqueidentifier" />
+          <Property Name="F_DicCode" Type="varchar" MaxLength="20" />
+          <Property Name="F_IsPublic" Type="tinyint" />
+          <Property Name="F_ObjectID" Type="uniqueidentifier" />
+          <Property Name="F_Status" Type="tinyint" />
+          <Property Name="F_AddDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_Finance">
+          <Key>
+            <PropertyRef Name="F_FinanceID" />
+          </Key>
+          <Property Name="F_FinanceID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="F_ObjectID" Type="uniqueidentifier" />
+          <Property Name="F_AccountsType" Type="tinyint" />
+          <Property Name="F_MainCtg" Type="uniqueidentifier" />
+          <Property Name="F_SubCtg" Type="uniqueidentifier" />
+          <Property Name="F_Money" Type="decimal" />
+          <Property Name="F_Remark" Type="nvarchar" MaxLength="200" />
+          <Property Name="F_AddUser" Type="uniqueidentifier" />
+          <Property Name="F_AddDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_InOutLibrary">
+          <Key>
+            <PropertyRef Name="F_InOutLibraryID" />
+          </Key>
+          <Property Name="F_InOutLibraryID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="F_ObjectID" Type="uniqueidentifier" />
+          <Property Name="F_ChangeType" Type="tinyint" />
+          <Property Name="F_Code" Type="varchar" MaxLength="20" />
+          <Property Name="F_Total" Type="decimal" />
+          <Property Name="F_IsPay" Type="tinyint" />
+          <Property Name="F_Remark" Type="nvarchar" MaxLength="200" />
+          <Property Name="F_Status" Type="tinyint" />
+          <Property Name="F_AddUser" Type="uniqueidentifier" />
+          <Property Name="F_AddDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_InOutLibraryDetail">
+          <Key>
+            <PropertyRef Name="F_ID" />
+          </Key>
+          <Property Name="F_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="F_ProductID" Type="uniqueidentifier" />
+          <Property Name="F_InOutLibraryID" Type="uniqueidentifier" />
+          <Property Name="F_Amount" Type="int" />
+          <Property Name="F_Price" Type="decimal" />
+          <Property Name="F_Total" Type="decimal" />
+          <Property Name="F_AddDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_Inventory">
+          <Key>
+            <PropertyRef Name="F_InventoryID" />
+          </Key>
+          <Property Name="F_InventoryID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="F_Code" Type="varchar" MaxLength="30" />
+          <Property Name="F_ObjectID" Type="uniqueidentifier" />
+          <Property Name="F_Remark" Type="nvarchar" MaxLength="200" />
+          <Property Name="F_User" Type="uniqueidentifier" />
+          <Property Name="F_InventoryDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_InventoryDetail">
+          <Key>
+            <PropertyRef Name="F_ID" />
+          </Key>
+          <Property Name="F_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="F_InventoryID" Type="uniqueidentifier" />
+          <Property Name="F_ProductID" Type="uniqueidentifier" />
+          <Property Name="F_StockNum" Type="int" />
+          <Property Name="F_RealNum" Type="int" />
+          <Property Name="F_ErrorNum" Type="int" />
+          <Property Name="F_Unit" Type="uniqueidentifier" />
+          <Property Name="F_Price" Type="decimal" />
+          <Property Name="F_ErrorMoney" Type="decimal" />
+          <Property Name="F_Remark" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="T_Object">
+          <Key>
+            <PropertyRef Name="F_ObjectID" />
+          </Key>
+          <Property Name="F_ObjectID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="F_ObjectType" Type="tinyint" />
+          <Property Name="F_ObjectName" Type="nvarchar" MaxLength="50" />
+          <Property Name="F_WarehouseID" Type="uniqueidentifier" />
+          <Property Name="F_Address" Type="nvarchar" MaxLength="100" />
+          <Property Name="F_Conatct" Type="nvarchar" MaxLength="20" />
+          <Property Name="F_Tel" Type="nvarchar" MaxLength="20" />
+          <Property Name="F_Status" Type="tinyint" />
+          <Property Name="F_AddDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_Orders">
+          <Key>
+            <PropertyRef Name="F_OrderID" />
+          </Key>
+          <Property Name="F_OrderID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="F_OrderCode" Type="varchar" MaxLength="30" />
+          <Property Name="F_BranchID" Type="uniqueidentifier" />
+          <Property Name="F_WarehouseID" Type="uniqueidentifier" />
+          <Property Name="F_CustomerID" Type="uniqueidentifier" />
+          <Property Name="F_DeliveryTime" Type="datetime" />
+          <Property Name="F_Earnest" Type="decimal" />
+          <Property Name="F_TotalMoney" Type="decimal" />
+          <Property Name="F_OverMoney" Type="decimal" />
+          <Property Name="F_PersonID" Type="uniqueidentifier" />
+          <Property Name="F_SellDate" Type="datetime" />
+          <Property Name="F_Status" Type="tinyint" />
+          <Property Name="F_Remark" Type="nvarchar" MaxLength="200" />
+          <Property Name="F_UserID" Type="uniqueidentifier" />
+          <Property Name="F_AddDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_OrdersDetail">
+          <Key>
+            <PropertyRef Name="F_ID" />
+          </Key>
+          <Property Name="F_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="F_OrderID" Type="uniqueidentifier" />
+          <Property Name="F_ProductID" Type="uniqueidentifier" />
+          <Property Name="F_UnitPrice" Type="decimal" />
+          <Property Name="F_DiscountRate" Type="decimal" />
+          <Property Name="F_Amount" Type="int" />
+          <Property Name="F_Total" Type="decimal" />
+          <Property Name="F_Status" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="T_Person">
+          <Key>
+            <PropertyRef Name="F_PersonID" />
+          </Key>
+          <Property Name="F_PersonID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="F_Name" Type="nvarchar" MaxLength="30" />
+          <Property Name="F_Sex" Type="tinyint" />
+          <Property Name="F_Phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="F_Address" Type="nvarchar" MaxLength="150" />
+          <Property Name="F_IDCard" Type="nvarchar" MaxLength="30" />
+          <Property Name="F_Wage" Type="decimal" />
+          <Property Name="F_EnterDate" Type="datetime" />
+          <Property Name="F_UserType" Type="tinyint" />
+          <Property Name="F_ObjectID" Type="uniqueidentifier" />
+          <Property Name="F_IsAdmin" Type="tinyint" />
+          <Property Name="F_Status" Type="tinyint" />
+          <Property Name="F_AddDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_Product">
+          <Key>
+            <PropertyRef Name="F_ProductID" />
+          </Key>
+          <Property Name="F_ProductID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="F_ProductName" Type="nvarchar" MaxLength="20" />
+          <Property Name="F_MainCtg" Type="uniqueidentifier" />
+          <Property Name="F_SubCtg" Type="uniqueidentifier" />
+          <Property Name="F_Code" Type="varchar" MaxLength="20" />
+          <Property Name="F_Unit" Type="uniqueidentifier" />
+          <Property Name="F_PurchasePrice" Type="decimal" />
+          <Property Name="F_SellPrice" Type="decimal" />
+          <Property Name="F_Size" Type="nvarchar" MaxLength="100" />
+          <Property Name="F_Weight" Type="float" />
+          <Property Name="F_Amount" Type="int" />
+          <Property Name="F_Alarm" Type="int" />
+          <Property Name="F_BonusType" Type="tinyint" />
+          <Property Name="F_Bonus" Type="varchar" MaxLength="20" />
+          <Property Name="F_Image" Type="varchar" MaxLength="200" />
+          <Property Name="F_Remark" Type="nvarchar" MaxLength="200" />
+          <Property Name="F_Status" Type="tinyint" />
+          <Property Name="F_ObjectID" Type="uniqueidentifier" />
+          <Property Name="F_AddUser" Type="uniqueidentifier" />
+          <Property Name="F_AddDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_SalesBonus">
+          <Key>
+            <PropertyRef Name="F_BonusID" />
+          </Key>
+          <Property Name="F_BonusID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="F_PersonID" Type="uniqueidentifier" />
+          <Property Name="F_OrderID" Type="uniqueidentifier" />
+          <Property Name="F_BonusMoney" Type="decimal" />
+          <Property Name="F_AddDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_SamplesStore">
+          <Key>
+            <PropertyRef Name="F_ID" />
+          </Key>
+          <Property Name="F_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="F_ObjectID" Type="uniqueidentifier" />
+          <Property Name="F_ProductID" Type="uniqueidentifier" />
+          <Property Name="F_Num" Type="int" />
+          <Property Name="F_User" Type="uniqueidentifier" />
+          <Property Name="F_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_Stock">
+          <Key>
+            <PropertyRef Name="F_StockID" />
+          </Key>
+          <Property Name="F_StockID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="F_ProductID" Type="uniqueidentifier" />
+          <Property Name="F_ObjectID" Type="uniqueidentifier" />
+          <Property Name="F_StockNum" Type="int" />
+        </EntityType>
+        <EntityType Name="T_StockDetail">
+          <Key>
+            <PropertyRef Name="F_ID" />
+          </Key>
+          <Property Name="F_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="F_StockID" Type="uniqueidentifier" />
+          <Property Name="F_ChangType" Type="tinyint" />
+          <Property Name="F_LibID" Type="uniqueidentifier" />
+          <Property Name="F_StartNum" Type="int" />
+          <Property Name="F_EndNum" Type="int" />
+          <Property Name="F_ChangeNum" Type="int" />
+          <Property Name="F_Remark" Type="nvarchar" MaxLength="200" />
+          <Property Name="F_Status" Type="tinyint" />
+          <Property Name="F_AddUser" Type="uniqueidentifier" />
+          <Property Name="F_AddDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_User">
+          <Key>
+            <PropertyRef Name="F_UserID" />
+          </Key>
+          <Property Name="F_UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="F_PersonID" Type="uniqueidentifier" />
+          <Property Name="F_Account" Type="varchar" MaxLength="50" />
+          <Property Name="F_UserPwd" Type="varchar" MaxLength="50" />
+          <Property Name="F_UserType" Type="tinyint" />
+          <Property Name="F_ObjID" Type="uniqueidentifier" />
+          <Property Name="F_RegDate" Type="datetime" />
+          <Property Name="F_FirstDate" Type="datetime" />
+          <Property Name="F_LastDate" Type="datetime" />
+          <Property Name="F_Status" Type="tinyint" />
+        </EntityType>
+        <Association Name="FK_T_CUSTOM_REFERENCE_T_OBJECT">
+          <End Role="T_Object" Type="JXCModel.Store.T_Object" Multiplicity="0..1" />
+          <End Role="T_Customer" Type="JXCModel.Store.T_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Object">
+              <PropertyRef Name="F_ObjectID" />
+            </Principal>
+            <Dependent Role="T_Customer">
+              <PropertyRef Name="F_ObjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_DELIVE_REFERENCE_T_ORDERS">
+          <End Role="T_Orders" Type="JXCModel.Store.T_Orders" Multiplicity="0..1" />
+          <End Role="T_Delivery" Type="JXCModel.Store.T_Delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Orders">
+              <PropertyRef Name="F_OrderID" />
+            </Principal>
+            <Dependent Role="T_Delivery">
+              <PropertyRef Name="F_OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_DELIVE_REFERENCE_T_PRODUC">
+          <End Role="T_Product" Type="JXCModel.Store.T_Product" Multiplicity="0..1" />
+          <End Role="T_Delivery" Type="JXCModel.Store.T_Delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Product">
+              <PropertyRef Name="F_ProductID" />
+            </Principal>
+            <Dependent Role="T_Delivery">
+              <PropertyRef Name="F_ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_DEPLOY_REFERENCE_T_PRODUC">
+          <End Role="T_Product" Type="JXCModel.Store.T_Product" Multiplicity="0..1" />
+          <End Role="T_Deploy" Type="JXCModel.Store.T_Deploy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Product">
+              <PropertyRef Name="F_ProductID" />
+            </Principal>
+            <Dependent Role="T_Deploy">
+              <PropertyRef Name="F_ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_INLIBR_REFERENCE_T_INLIBR">
+          <End Role="T_InOutLibrary" Type="JXCModel.Store.T_InOutLibrary" Multiplicity="0..1" />
+          <End Role="T_InOutLibraryDetail" Type="JXCModel.Store.T_InOutLibraryDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_InOutLibrary">
+              <PropertyRef Name="F_InOutLibraryID" />
+            </Principal>
+            <Dependent Role="T_InOutLibraryDetail">
+              <PropertyRef Name="F_InOutLibraryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_INLIBR_REFERENCE_T_PRODUC">
+          <End Role="T_Product" Type="JXCModel.Store.T_Product" Multiplicity="0..1" />
+          <End Role="T_InOutLibraryDetail" Type="JXCModel.Store.T_InOutLibraryDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Product">
+              <PropertyRef Name="F_ProductID" />
+            </Principal>
+            <Dependent Role="T_InOutLibraryDetail">
+              <PropertyRef Name="F_ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_INVENT_REFERENCE_T_INVENT">
+          <End Role="T_Inventory" Type="JXCModel.Store.T_Inventory" Multiplicity="0..1" />
+          <End Role="T_InventoryDetail" Type="JXCModel.Store.T_InventoryDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Inventory">
+              <PropertyRef Name="F_InventoryID" />
+            </Principal>
+            <Dependent Role="T_InventoryDetail">
+              <PropertyRef Name="F_InventoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_INVENT_REFERENCE_T_PRODUC">
+          <End Role="T_Product" Type="JXCModel.Store.T_Product" Multiplicity="0..1" />
+          <End Role="T_InventoryDetail" Type="JXCModel.Store.T_InventoryDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Product">
+              <PropertyRef Name="F_ProductID" />
+            </Principal>
+            <Dependent Role="T_InventoryDetail">
+              <PropertyRef Name="F_ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_ORDERS_REFERENCE_T_CUSTOM">
+          <End Role="T_Customer" Type="JXCModel.Store.T_Customer" Multiplicity="0..1" />
+          <End Role="T_Orders" Type="JXCModel.Store.T_Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Customer">
+              <PropertyRef Name="F_CustomerID" />
+            </Principal>
+            <Dependent Role="T_Orders">
+              <PropertyRef Name="F_CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_ORDERS_REFERENCE_T_PERSON">
+          <End Role="T_Person" Type="JXCModel.Store.T_Person" Multiplicity="0..1" />
+          <End Role="T_Orders" Type="JXCModel.Store.T_Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Person">
+              <PropertyRef Name="F_PersonID" />
+            </Principal>
+            <Dependent Role="T_Orders">
+              <PropertyRef Name="F_PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_ORDERS_REFERENCE_T_PRODUC">
+          <End Role="T_Product" Type="JXCModel.Store.T_Product" Multiplicity="0..1" />
+          <End Role="T_OrdersDetail" Type="JXCModel.Store.T_OrdersDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Product">
+              <PropertyRef Name="F_ProductID" />
+            </Principal>
+            <Dependent Role="T_OrdersDetail">
+              <PropertyRef Name="F_ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_PERSON_REFERENCE_T_OBJECT">
+          <End Role="T_Object" Type="JXCModel.Store.T_Object" Multiplicity="0..1" />
+          <End Role="T_Person" Type="JXCModel.Store.T_Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Object">
+              <PropertyRef Name="F_ObjectID" />
+            </Principal>
+            <Dependent Role="T_Person">
+              <PropertyRef Name="F_ObjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_SALESB_REFERENCE_T_PERSON">
+          <End Role="T_Person" Type="JXCModel.Store.T_Person" Multiplicity="0..1" />
+          <End Role="T_SalesBonus" Type="JXCModel.Store.T_SalesBonus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Person">
+              <PropertyRef Name="F_PersonID" />
+            </Principal>
+            <Dependent Role="T_SalesBonus">
+              <PropertyRef Name="F_PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_SAMPLE_REFERENCE_T_PRODUC">
+          <End Role="T_Product" Type="JXCModel.Store.T_Product" Multiplicity="0..1" />
+          <End Role="T_SamplesStore" Type="JXCModel.Store.T_SamplesStore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Product">
+              <PropertyRef Name="F_ProductID" />
+            </Principal>
+            <Dependent Role="T_SamplesStore">
+              <PropertyRef Name="F_ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_STOCK_REFERENCE_T_PRODUC">
+          <End Role="T_Product" Type="JXCModel.Store.T_Product" Multiplicity="0..1" />
+          <End Role="T_Stock" Type="JXCModel.Store.T_Stock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Product">
+              <PropertyRef Name="F_ProductID" />
+            </Principal>
+            <Dependent Role="T_Stock">
+              <PropertyRef Name="F_ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_STOCKD_REFERENCE_T_STOCK">
+          <End Role="T_Stock" Type="JXCModel.Store.T_Stock" Multiplicity="0..1" />
+          <End Role="T_StockDetail" Type="JXCModel.Store.T_StockDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Stock">
+              <PropertyRef Name="F_StockID" />
+            </Principal>
+            <Dependent Role="T_StockDetail">
+              <PropertyRef Name="F_StockID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="JXCModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="JXCEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="T_Customer" EntityType="JXCModel.T_Customer" />
+          <EntitySet Name="T_Deploy" EntityType="JXCModel.T_Deploy" />
+          <EntitySet Name="T_Dictionary" EntityType="JXCModel.T_Dictionary" />
+          <EntitySet Name="T_Finance" EntityType="JXCModel.T_Finance" />
+          <EntitySet Name="T_Inventory" EntityType="JXCModel.T_Inventory" />
+          <EntitySet Name="T_InventoryDetail" EntityType="JXCModel.T_InventoryDetail" />
+          <EntitySet Name="T_Object" EntityType="JXCModel.T_Object" />
+          <EntitySet Name="T_Orders" EntityType="JXCModel.T_Orders" />
+          <EntitySet Name="T_OrdersDetail" EntityType="JXCModel.T_OrdersDetail" />
+          <EntitySet Name="T_Person" EntityType="JXCModel.T_Person" />
+          <EntitySet Name="T_Product" EntityType="JXCModel.T_Product" />
+          <EntitySet Name="T_SalesBonus" EntityType="JXCModel.T_SalesBonus" />
+          <EntitySet Name="T_SamplesStore" EntityType="JXCModel.T_SamplesStore" />
+          <EntitySet Name="T_Stock" EntityType="JXCModel.T_Stock" />
+          <EntitySet Name="T_StockDetail" EntityType="JXCModel.T_StockDetail" />
+          <EntitySet Name="T_User" EntityType="JXCModel.T_User" />
+          <AssociationSet Name="FK_T_CUSTOM_REFERENCE_T_OBJECT" Association="JXCModel.FK_T_CUSTOM_REFERENCE_T_OBJECT">
+            <End Role="T_Object" EntitySet="T_Object" />
+            <End Role="T_Customer" EntitySet="T_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_ORDERS_REFERENCE_T_CUSTOM" Association="JXCModel.FK_T_ORDERS_REFERENCE_T_CUSTOM">
+            <End Role="T_Customer" EntitySet="T_Customer" />
+            <End Role="T_Orders" EntitySet="T_Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_DEPLOY_REFERENCE_T_PRODUC" Association="JXCModel.FK_T_DEPLOY_REFERENCE_T_PRODUC">
+            <End Role="T_Product" EntitySet="T_Product" />
+            <End Role="T_Deploy" EntitySet="T_Deploy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_INVENT_REFERENCE_T_INVENT" Association="JXCModel.FK_T_INVENT_REFERENCE_T_INVENT">
+            <End Role="T_Inventory" EntitySet="T_Inventory" />
+            <End Role="T_InventoryDetail" EntitySet="T_InventoryDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_INVENT_REFERENCE_T_PRODUC" Association="JXCModel.FK_T_INVENT_REFERENCE_T_PRODUC">
+            <End Role="T_Product" EntitySet="T_Product" />
+            <End Role="T_InventoryDetail" EntitySet="T_InventoryDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_PERSON_REFERENCE_T_OBJECT" Association="JXCModel.FK_T_PERSON_REFERENCE_T_OBJECT">
+            <End Role="T_Object" EntitySet="T_Object" />
+            <End Role="T_Person" EntitySet="T_Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_ORDERS_REFERENCE_T_ORDERS" Association="JXCModel.FK_T_ORDERS_REFERENCE_T_ORDERS">
+            <End Role="T_Orders" EntitySet="T_Orders" />
+            <End Role="T_OrdersDetail" EntitySet="T_OrdersDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_ORDERS_REFERENCE_T_PERSON" Association="JXCModel.FK_T_ORDERS_REFERENCE_T_PERSON">
+            <End Role="T_Person" EntitySet="T_Person" />
+            <End Role="T_Orders" EntitySet="T_Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_ORDERS_REFERENCE_T_PRODUC" Association="JXCModel.FK_T_ORDERS_REFERENCE_T_PRODUC">
+            <End Role="T_Product" EntitySet="T_Product" />
+            <End Role="T_OrdersDetail" EntitySet="T_OrdersDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_SALESB_REFERENCE_T_PERSON" Association="JXCModel.FK_T_SALESB_REFERENCE_T_PERSON">
+            <End Role="T_Person" EntitySet="T_Person" />
+            <End Role="T_SalesBonus" EntitySet="T_SalesBonus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_USER_REFERENCE_T_PERSON" Association="JXCModel.FK_T_USER_REFERENCE_T_PERSON">
+            <End Role="T_Person" EntitySet="T_Person" />
+            <End Role="T_User" EntitySet="T_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_SAMPLE_REFERENCE_T_PRODUC" Association="JXCModel.FK_T_SAMPLE_REFERENCE_T_PRODUC">
+            <End Role="T_Product" EntitySet="T_Product" />
+            <End Role="T_SamplesStore" EntitySet="T_SamplesStore" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_STOCK_REFERENCE_T_PRODUC" Association="JXCModel.FK_T_STOCK_REFERENCE_T_PRODUC">
+            <End Role="T_Product" EntitySet="T_Product" />
+            <End Role="T_Stock" EntitySet="T_Stock" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_STOCKD_REFERENCE_T_STOCK" Association="JXCModel.FK_T_STOCKD_REFERENCE_T_STOCK">
+            <End Role="T_Stock" EntitySet="T_Stock" />
+            <End Role="T_StockDetail" EntitySet="T_StockDetail" />
+          </AssociationSet>
+          <EntitySet Name="T_Delivery" EntityType="JXCModel.T_Delivery" />
+          <AssociationSet Name="FK_T_DELIVE_REFERENCE_T_ORDERS" Association="JXCModel.FK_T_DELIVE_REFERENCE_T_ORDERS">
+            <End Role="T_Orders" EntitySet="T_Orders" />
+            <End Role="T_Delivery" EntitySet="T_Delivery" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_DELIVE_REFERENCE_T_PRODUC" Association="JXCModel.FK_T_DELIVE_REFERENCE_T_PRODUC">
+            <End Role="T_Product" EntitySet="T_Product" />
+            <End Role="T_Delivery" EntitySet="T_Delivery" />
+          </AssociationSet>
+          <EntitySet Name="T_InOutLibrary" EntityType="JXCModel.T_InOutLibrary" />
+          <EntitySet Name="T_InOutLibraryDetail" EntityType="JXCModel.T_InOutLibraryDetail" />
+          <AssociationSet Name="FK_T_INLIBR_REFERENCE_T_INLIBR" Association="JXCModel.FK_T_INLIBR_REFERENCE_T_INLIBR">
+            <End Role="T_InOutLibrary" EntitySet="T_InOutLibrary" />
+            <End Role="T_InOutLibraryDetail" EntitySet="T_InOutLibraryDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_INLIBR_REFERENCE_T_PRODUC" Association="JXCModel.FK_T_INLIBR_REFERENCE_T_PRODUC">
+            <End Role="T_Product" EntitySet="T_Product" />
+            <End Role="T_InOutLibraryDetail" EntitySet="T_InOutLibraryDetail" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="T_Customer">
+          <Key>
+            <PropertyRef Name="F_CustomerID" />
+          </Key>
+          <Property Name="F_CustomerID" Type="Guid" Nullable="false" />
+          <Property Name="F_CustomerName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="F_Sex" Type="Byte" />
+          <Property Name="F_Contact" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="F_Phone" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="F_Tel" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="F_DeliveryAddress" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="F_Bank" Type="Guid" />
+          <Property Name="F_Card" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="F_ObjectID" Type="Guid" />
+          <Property Name="F_Remark" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="F_AddUser" Type="Guid" />
+          <Property Name="F_AddDate" Type="DateTime" />
+          <NavigationProperty Name="T_Object" Relationship="JXCModel.FK_T_CUSTOM_REFERENCE_T_OBJECT" FromRole="T_Customer" ToRole="T_Object" />
+          <NavigationProperty Name="T_Orders" Relationship="JXCModel.FK_T_ORDERS_REFERENCE_T_CUSTOM" FromRole="T_Customer" ToRole="T_Orders" />
+          <Property Type="Byte" Name="F_Status" />
+        </EntityType>
+        <EntityType Name="T_Deploy">
+          <Key>
+            <PropertyRef Name="F_ID" />
+          </Key>
+          <Property Name="F_ID" Type="Guid" Nullable="false" />
+          <Property Name="F_WarehouseID" Type="Guid" />
+          <Property Name="F_StoreID" Type="Guid" />
+          <Property Name="F_ProductID" Type="Guid" />
+          <Property Name="F_DeployType" Type="Byte" />
+          <Property Name="F_Num" Type="Int32" />
+          <Property Name="F_User" Type="Guid" />
+          <Property Name="F_Date" Type="DateTime" />
+          <NavigationProperty Name="T_Product" Relationship="JXCModel.FK_T_DEPLOY_REFERENCE_T_PRODUC" FromRole="T_Deploy" ToRole="T_Product" />
+        </EntityType>
+        <EntityType Name="T_Dictionary">
+          <Key>
+            <PropertyRef Name="F_DictionaryID" />
+          </Key>
+          <Property Name="F_DictionaryID" Type="Guid" Nullable="false" />
+          <Property Name="F_DicName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="F_ParID" Type="Guid" />
+          <Property Name="F_DicCode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="F_IsPublic" Type="Byte" />
+          <Property Name="F_ObjectID" Type="Guid" />
+          <Property Name="F_AddDate" Type="DateTime" />
+          <Property Type="Byte" Name="F_Status" />
+        </EntityType>
+        <EntityType Name="T_Finance">
+          <Key>
+            <PropertyRef Name="F_FinanceID" />
+          </Key>
+          <Property Name="F_FinanceID" Type="Guid" Nullable="false" />
+          <Property Name="F_ObjectID" Type="Guid" />
+          <Property Name="F_AccountsType" Type="Byte" />
+          <Property Name="F_MainCtg" Type="Guid" />
+          <Property Name="F_SubCtg" Type="Guid" />
+          <Property Name="F_Money" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="F_Remark" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="F_AddUser" Type="Guid" />
+          <Property Name="F_AddDate" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="T_Inventory">
+          <Key>
+            <PropertyRef Name="F_InventoryID" />
+          </Key>
+          <Property Name="F_InventoryID" Type="Guid" Nullable="false" />
+          <Property Name="F_Code" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="F_ObjectID" Type="Guid" />
+          <Property Name="F_Remark" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="F_User" Type="Guid" />
+          <Property Name="F_InventoryDate" Type="DateTime" />
+          <NavigationProperty Name="T_InventoryDetail" Relationship="JXCModel.FK_T_INVENT_REFERENCE_T_INVENT" FromRole="T_Inventory" ToRole="T_InventoryDetail" />
+        </EntityType>
+        <EntityType Name="T_InventoryDetail">
+          <Key>
+            <PropertyRef Name="F_ID" />
+          </Key>
+          <Property Name="F_ID" Type="Guid" Nullable="false" />
+          <Property Name="F_InventoryID" Type="Guid" />
+          <Property Name="F_ProductID" Type="Guid" />
+          <Property Name="F_StockNum" Type="Int32" />
+          <Property Name="F_RealNum" Type="Int32" />
+          <Property Name="F_ErrorNum" Type="Int32" />
+          <Property Name="F_Unit" Type="Guid" />
+          <Property Name="F_Price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="F_ErrorMoney" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="F_Remark" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="T_Inventory" Relationship="JXCModel.FK_T_INVENT_REFERENCE_T_INVENT" FromRole="T_InventoryDetail" ToRole="T_Inventory" />
+          <NavigationProperty Name="T_Product" Relationship="JXCModel.FK_T_INVENT_REFERENCE_T_PRODUC" FromRole="T_InventoryDetail" ToRole="T_Product" />
+        </EntityType>
+        <EntityType Name="T_Object">
+          <Key>
+            <PropertyRef Name="F_ObjectID" />
+          </Key>
+          <Property Name="F_ObjectID" Type="Guid" Nullable="false" />
+          <Property Name="F_ObjectType" Type="Byte" />
+          <Property Name="F_ObjectName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="F_Address" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="F_Conatct" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="F_Tel" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="F_AddDate" Type="DateTime" />
+          <NavigationProperty Name="T_Customer" Relationship="JXCModel.FK_T_CUSTOM_REFERENCE_T_OBJECT" FromRole="T_Object" ToRole="T_Customer" />
+          <NavigationProperty Name="T_Person" Relationship="JXCModel.FK_T_PERSON_REFERENCE_T_OBJECT" FromRole="T_Object" ToRole="T_Person" />
+          <Property Type="Byte" Name="F_Status" />
+          <Property Type="Guid" Name="F_WarehouseID" />
+        </EntityType>
+        <EntityType Name="T_Orders">
+          <Key>
+            <PropertyRef Name="F_OrderID" />
+          </Key>
+          <Property Name="F_OrderID" Type="Guid" Nullable="false" />
+          <Property Name="F_OrderCode" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="F_BranchID" Type="Guid" />
+          <Property Name="F_WarehouseID" Type="Guid" />
+          <Property Name="F_CustomerID" Type="Guid" />
+          <Property Name="F_DeliveryTime" Type="DateTime" />
+          <Property Name="F_Earnest" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="F_TotalMoney" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="F_OverMoney" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="F_PersonID" Type="Guid" />
+          <Property Name="F_SellDate" Type="DateTime" />
+          <Property Name="F_Status" Type="Byte" />
+          <Property Name="F_Remark" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="F_UserID" Type="Guid" />
+          <Property Name="F_AddDate" Type="DateTime" />
+          <NavigationProperty Name="T_Customer" Relationship="JXCModel.FK_T_ORDERS_REFERENCE_T_CUSTOM" FromRole="T_Orders" ToRole="T_Customer" />
+          <NavigationProperty Name="T_OrdersDetail" Relationship="JXCModel.FK_T_ORDERS_REFERENCE_T_ORDERS" FromRole="T_Orders" ToRole="T_OrdersDetail" />
+          <NavigationProperty Name="T_Person" Relationship="JXCModel.FK_T_ORDERS_REFERENCE_T_PERSON" FromRole="T_Orders" ToRole="T_Person" />
+          <NavigationProperty Name="T_Delivery" Relationship="JXCModel.FK_T_DELIVE_REFERENCE_T_ORDERS" FromRole="T_Orders" ToRole="T_Delivery" />
+        </EntityType>
+        <EntityType Name="T_OrdersDetail">
+          <Key>
+            <PropertyRef Name="F_ID" />
+          </Key>
+          <Property Name="F_ID" Type="Guid" Nullable="false" />
+          <Property Name="F_OrderID" Type="Guid" />
+          <Property Name="F_ProductID" Type="Guid" />
+          <Property Name="F_UnitPrice" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="F_DiscountRate" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="F_Amount" Type="Int32" />
+          <Property Name="F_Total" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="T_Orders" Relationship="JXCModel.FK_T_ORDERS_REFERENCE_T_ORDERS" FromRole="T_OrdersDetail" ToRole="T_Orders" />
+          <NavigationProperty Name="T_Product" Relationship="JXCModel.FK_T_ORDERS_REFERENCE_T_PRODUC" FromRole="T_OrdersDetail" ToRole="T_Product" />
+          <Property Type="Byte" Name="F_Status" />
+        </EntityType>
+        <EntityType Name="T_Person">
+          <Key>
+            <PropertyRef Name="F_PersonID" />
+          </Key>
+          <Property Name="F_PersonID" Type="Guid" Nullable="false" />
+          <Property Name="F_Name" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="F_Sex" Type="Byte" />
+          <Property Name="F_Phone" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="F_Address" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="F_IDCard" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="F_Wage" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="F_EnterDate" Type="DateTime" />
+          <Property Name="F_UserType" Type="Byte" />
+          <Property Name="F_ObjectID" Type="Guid" />
+          <Property Name="F_AddDate" Type="DateTime" />
+          <NavigationProperty Name="T_Object" Relationship="JXCModel.FK_T_PERSON_REFERENCE_T_OBJECT" FromRole="T_Person" ToRole="T_Object" />
+          <NavigationProperty Name="T_Orders" Relationship="JXCModel.FK_T_ORDERS_REFERENCE_T_PERSON" FromRole="T_Person" ToRole="T_Orders" />
+          <NavigationProperty Name="T_SalesBonus" Relationship="JXCModel.FK_T_SALESB_REFERENCE_T_PERSON" FromRole="T_Person" ToRole="T_SalesBonus" />
+          <NavigationProperty Name="T_User" Relationship="JXCModel.FK_T_USER_REFERENCE_T_PERSON" FromRole="T_Person" ToRole="T_User" />
+          <Property Type="Byte" Name="F_IsAdmin" />
+          <Property Type="Byte" Name="F_Status" />
+        </EntityType>
+        <EntityType Name="T_Product">
+          <Key>
+            <PropertyRef Name="F_ProductID" />
+          </Key>
+          <Property Name="F_ProductID" Type="Guid" Nullable="false" />
+          <Property Name="F_ProductName" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="F_MainCtg" Type="Guid" />
+          <Property Name="F_SubCtg" Type="Guid" />
+          <Property Name="F_Code" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="F_Unit" Type="Guid" />
+          <Property Name="F_PurchasePrice" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="F_SellPrice" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="F_Size" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="F_Weight" Type="Double" />
+          <Property Name="F_Amount" Type="Int32" />
+          <Property Name="F_Alarm" Type="Int32" />
+          <Property Name="F_BonusType" Type="Byte" />
+          <Property Name="F_Bonus" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="F_Image" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="F_Remark" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="F_AddUser" Type="Guid" />
+          <Property Name="F_AddDate" Type="DateTime" />
+          <NavigationProperty Name="T_Deploy" Relationship="JXCModel.FK_T_DEPLOY_REFERENCE_T_PRODUC" FromRole="T_Product" ToRole="T_Deploy" />
+          <NavigationProperty Name="T_InventoryDetail" Relationship="JXCModel.FK_T_INVENT_REFERENCE_T_PRODUC" FromRole="T_Product" ToRole="T_InventoryDetail" />
+          <NavigationProperty Name="T_OrdersDetail" Relationship="JXCModel.FK_T_ORDERS_REFERENCE_T_PRODUC" FromRole="T_Product" ToRole="T_OrdersDetail" />
+          <NavigationProperty Name="T_SamplesStore" Relationship="JXCModel.FK_T_SAMPLE_REFERENCE_T_PRODUC" FromRole="T_Product" ToRole="T_SamplesStore" />
+          <NavigationProperty Name="T_Stock" Relationship="JXCModel.FK_T_STOCK_REFERENCE_T_PRODUC" FromRole="T_Product" ToRole="T_Stock" />
+          <Property Type="Byte" Name="F_Status" />
+          <Property Type="Guid" Name="F_ObjectID" Nullable="false" />
+          <NavigationProperty Name="T_Delivery" Relationship="JXCModel.FK_T_DELIVE_REFERENCE_T_PRODUC" FromRole="T_Product" ToRole="T_Delivery" />
+          <NavigationProperty Name="T_InOutLibraryDetail" Relationship="JXCModel.FK_T_INLIBR_REFERENCE_T_PRODUC" FromRole="T_Product" ToRole="T_InOutLibraryDetail" />
+        </EntityType>
+        <EntityType Name="T_SalesBonus">
+          <Key>
+            <PropertyRef Name="F_BonusID" />
+          </Key>
+          <Property Name="F_BonusID" Type="Guid" Nullable="false" />
+          <Property Name="F_PersonID" Type="Guid" />
+          <Property Name="F_OrderID" Type="Guid" />
+          <Property Name="F_BonusMoney" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="F_AddDate" Type="DateTime" />
+          <NavigationProperty Name="T_Person" Relationship="JXCModel.FK_T_SALESB_REFERENCE_T_PERSON" FromRole="T_SalesBonus" ToRole="T_Person" />
+        </EntityType>
+        <EntityType Name="T_SamplesStore">
+          <Key>
+            <PropertyRef Name="F_ID" />
+          </Key>
+          <Property Name="F_ID" Type="Guid" Nullable="false" />
+          <Property Name="F_ObjectID" Type="Guid" />
+          <Property Name="F_ProductID" Type="Guid" />
+          <Property Name="F_Num" Type="Int32" />
+          <Property Name="F_User" Type="Guid" />
+          <Property Name="F_Date" Type="DateTime" />
+          <NavigationProperty Name="T_Product" Relationship="JXCModel.FK_T_SAMPLE_REFERENCE_T_PRODUC" FromRole="T_SamplesStore" ToRole="T_Product" />
+        </EntityType>
+        <EntityType Name="T_Stock">
+          <Key>
+            <PropertyRef Name="F_StockID" />
+          </Key>
+          <Property Name="F_StockID" Type="Guid" Nullable="false" />
+          <Property Name="F_ProductID" Type="Guid" />
+          <Property Name="F_ObjectID" Type="Guid" />
+          <Property Name="F_StockNum" Type="Int32" />
+          <NavigationProperty Name="T_Product" Relationship="JXCModel.FK_T_STOCK_REFERENCE_T_PRODUC" FromRole="T_Stock" ToRole="T_Product" />
+          <NavigationProperty Name="T_StockDetail" Relationship="JXCModel.FK_T_STOCKD_REFERENCE_T_STOCK" FromRole="T_Stock" ToRole="T_StockDetail" />
+        </EntityType>
+        <EntityType Name="T_StockDetail">
+          <Key>
+            <PropertyRef Name="F_ID" />
+          </Key>
+          <Property Name="F_ID" Type="Guid" Nullable="false" />
+          <Property Name="F_StockID" Type="Guid" />
+          <Property Name="F_StartNum" Type="Int32" />
+          <Property Name="F_EndNum" Type="Int32" />
+          <Property Name="F_Remark" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="F_AddUser" Type="Guid" />
+          <Property Name="F_AddDate" Type="DateTime" />
+          <NavigationProperty Name="T_Stock" Relationship="JXCModel.FK_T_STOCKD_REFERENCE_T_STOCK" FromRole="T_StockDetail" ToRole="T_Stock" />
+          <Property Type="Byte" Name="F_ChangType" />
+          <Property Type="Guid" Name="F_LibID" />
+          <Property Type="Int32" Name="F_ChangeNum" />
+          <Property Type="Byte" Name="F_Status" />
+        </EntityType>
+        <EntityType Name="T_User">
+          <Key>
+            <PropertyRef Name="F_UserID" />
+          </Key>
+          <Property Name="F_UserID" Type="Guid" Nullable="false" />
+          <Property Name="F_PersonID" Type="Guid" />
+          <Property Name="F_Account" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="F_UserPwd" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="F_UserType" Type="Byte" />
+          <Property Name="F_ObjID" Type="Guid" />
+          <Property Name="F_RegDate" Type="DateTime" />
+          <Property Name="F_FirstDate" Type="DateTime" />
+          <Property Name="F_LastDate" Type="DateTime" />
+          <NavigationProperty Name="T_Person" Relationship="JXCModel.FK_T_USER_REFERENCE_T_PERSON" FromRole="T_User" ToRole="T_Person" />
+          <Property Type="Byte" Name="F_Status" />
+        </EntityType>
+        <Association Name="FK_T_CUSTOM_REFERENCE_T_OBJECT">
+          <End Role="T_Object" Type="JXCModel.T_Object" Multiplicity="0..1" />
+          <End Role="T_Customer" Type="JXCModel.T_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Object">
+              <PropertyRef Name="F_ObjectID" />
+            </Principal>
+            <Dependent Role="T_Customer">
+              <PropertyRef Name="F_ObjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_ORDERS_REFERENCE_T_CUSTOM">
+          <End Role="T_Customer" Type="JXCModel.T_Customer" Multiplicity="0..1" />
+          <End Role="T_Orders" Type="JXCModel.T_Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Customer">
+              <PropertyRef Name="F_CustomerID" />
+            </Principal>
+            <Dependent Role="T_Orders">
+              <PropertyRef Name="F_CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_DEPLOY_REFERENCE_T_PRODUC">
+          <End Role="T_Product" Type="JXCModel.T_Product" Multiplicity="0..1" />
+          <End Role="T_Deploy" Type="JXCModel.T_Deploy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Product">
+              <PropertyRef Name="F_ProductID" />
+            </Principal>
+            <Dependent Role="T_Deploy">
+              <PropertyRef Name="F_ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_INVENT_REFERENCE_T_INVENT">
+          <End Role="T_Inventory" Type="JXCModel.T_Inventory" Multiplicity="0..1" />
+          <End Role="T_InventoryDetail" Type="JXCModel.T_InventoryDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Inventory">
+              <PropertyRef Name="F_InventoryID" />
+            </Principal>
+            <Dependent Role="T_InventoryDetail">
+              <PropertyRef Name="F_InventoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_INVENT_REFERENCE_T_PRODUC">
+          <End Role="T_Product" Type="JXCModel.T_Product" Multiplicity="0..1" />
+          <End Role="T_InventoryDetail" Type="JXCModel.T_InventoryDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Product">
+              <PropertyRef Name="F_ProductID" />
+            </Principal>
+            <Dependent Role="T_InventoryDetail">
+              <PropertyRef Name="F_ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_PERSON_REFERENCE_T_OBJECT">
+          <End Role="T_Object" Type="JXCModel.T_Object" Multiplicity="0..1" />
+          <End Role="T_Person" Type="JXCModel.T_Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Object">
+              <PropertyRef Name="F_ObjectID" />
+            </Principal>
+            <Dependent Role="T_Person">
+              <PropertyRef Name="F_ObjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_ORDERS_REFERENCE_T_ORDERS">
+          <End Role="T_Orders" Type="JXCModel.T_Orders" Multiplicity="0..1" />
+          <End Role="T_OrdersDetail" Type="JXCModel.T_OrdersDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Orders">
+              <PropertyRef Name="F_OrderID" />
+            </Principal>
+            <Dependent Role="T_OrdersDetail">
+              <PropertyRef Name="F_OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_ORDERS_REFERENCE_T_PERSON">
+          <End Role="T_Person" Type="JXCModel.T_Person" Multiplicity="0..1" />
+          <End Role="T_Orders" Type="JXCModel.T_Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Person">
+              <PropertyRef Name="F_PersonID" />
+            </Principal>
+            <Dependent Role="T_Orders">
+              <PropertyRef Name="F_PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_ORDERS_REFERENCE_T_PRODUC">
+          <End Role="T_Product" Type="JXCModel.T_Product" Multiplicity="0..1" />
+          <End Role="T_OrdersDetail" Type="JXCModel.T_OrdersDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Product">
+              <PropertyRef Name="F_ProductID" />
+            </Principal>
+            <Dependent Role="T_OrdersDetail">
+              <PropertyRef Name="F_ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_SALESB_REFERENCE_T_PERSON">
+          <End Role="T_Person" Type="JXCModel.T_Person" Multiplicity="0..1" />
+          <End Role="T_SalesBonus" Type="JXCModel.T_SalesBonus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Person">
+              <PropertyRef Name="F_PersonID" />
+            </Principal>
+            <Dependent Role="T_SalesBonus">
+              <PropertyRef Name="F_PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_USER_REFERENCE_T_PERSON">
+          <End Role="T_Person" Type="JXCModel.T_Person" Multiplicity="0..1" />
+          <End Role="T_User" Type="JXCModel.T_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Person">
+              <PropertyRef Name="F_PersonID" />
+            </Principal>
+            <Dependent Role="T_User">
+              <PropertyRef Name="F_PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_SAMPLE_REFERENCE_T_PRODUC">
+          <End Role="T_Product" Type="JXCModel.T_Product" Multiplicity="0..1" />
+          <End Role="T_SamplesStore" Type="JXCModel.T_SamplesStore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Product">
+              <PropertyRef Name="F_ProductID" />
+            </Principal>
+            <Dependent Role="T_SamplesStore">
+              <PropertyRef Name="F_ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_STOCK_REFERENCE_T_PRODUC">
+          <End Role="T_Product" Type="JXCModel.T_Product" Multiplicity="0..1" />
+          <End Role="T_Stock" Type="JXCModel.T_Stock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Product">
+              <PropertyRef Name="F_ProductID" />
+            </Principal>
+            <Dependent Role="T_Stock">
+              <PropertyRef Name="F_ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_STOCKD_REFERENCE_T_STOCK">
+          <End Role="T_Stock" Type="JXCModel.T_Stock" Multiplicity="0..1" />
+          <End Role="T_StockDetail" Type="JXCModel.T_StockDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Stock">
+              <PropertyRef Name="F_StockID" />
+            </Principal>
+            <Dependent Role="T_StockDetail">
+              <PropertyRef Name="F_StockID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="T_Delivery">
+          <Key>
+            <PropertyRef Name="F_DeliveryID" />
+          </Key>
+          <Property Type="Guid" Name="F_DeliveryID" Nullable="false" />
+          <Property Type="Guid" Name="F_OrderID" />
+          <Property Type="Guid" Name="F_ProductID" />
+          <Property Type="Guid" Name="F_DeliveryPerson" />
+          <Property Type="Int32" Name="F_Num" />
+          <Property Type="Decimal" Name="F_DeliveryMoney" Precision="18" Scale="0" />
+          <Property Type="Byte" Name="F_Status" />
+          <Property Type="DateTime" Name="F_Date" />
+          <NavigationProperty Name="T_Orders" Relationship="JXCModel.FK_T_DELIVE_REFERENCE_T_ORDERS" FromRole="T_Delivery" ToRole="T_Orders" />
+          <NavigationProperty Name="T_Product" Relationship="JXCModel.FK_T_DELIVE_REFERENCE_T_PRODUC" FromRole="T_Delivery" ToRole="T_Product" />
+        </EntityType>
+        <Association Name="FK_T_DELIVE_REFERENCE_T_ORDERS">
+          <End Type="JXCModel.T_Orders" Role="T_Orders" Multiplicity="0..1" />
+          <End Type="JXCModel.T_Delivery" Role="T_Delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Orders">
+              <PropertyRef Name="F_OrderID" />
+            </Principal>
+            <Dependent Role="T_Delivery">
+              <PropertyRef Name="F_OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_DELIVE_REFERENCE_T_PRODUC">
+          <End Type="JXCModel.T_Product" Role="T_Product" Multiplicity="0..1" />
+          <End Type="JXCModel.T_Delivery" Role="T_Delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Product">
+              <PropertyRef Name="F_ProductID" />
+            </Principal>
+            <Dependent Role="T_Delivery">
+              <PropertyRef Name="F_ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="T_InOutLibrary">
+          <Key>
+            <PropertyRef Name="F_InOutLibraryID" />
+          </Key>
+          <Property Type="Guid" Name="F_InOutLibraryID" Nullable="false" />
+          <Property Type="Guid" Name="F_ObjectID" />
+          <Property Type="Byte" Name="F_ChangeType" />
+          <Property Type="String" Name="F_Code" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="F_Total" Precision="18" Scale="0" />
+          <Property Type="Byte" Name="F_IsPay" />
+          <Property Type="String" Name="F_Remark" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="F_Status" />
+          <Property Type="Guid" Name="F_AddUser" />
+          <Property Type="DateTime" Name="F_AddDate" />
+          <NavigationProperty Name="T_InOutLibraryDetail" Relationship="JXCModel.FK_T_INLIBR_REFERENCE_T_INLIBR" FromRole="T_InOutLibrary" ToRole="T_InOutLibraryDetail" />
+        </EntityType>
+        <EntityType Name="T_InOutLibraryDetail">
+          <Key>
+            <PropertyRef Name="F_ID" />
+          </Key>
+          <Property Type="Guid" Name="F_ID" Nullable="false" />
+          <Property Type="Guid" Name="F_ProductID" />
+          <Property Type="Guid" Name="F_InOutLibraryID" />
+          <Property Type="Int32" Name="F_Amount" />
+          <Property Type="Decimal" Name="F_Price" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="F_Total" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="F_AddDate" />
+          <NavigationProperty Name="T_InOutLibrary" Relationship="JXCModel.FK_T_INLIBR_REFERENCE_T_INLIBR" FromRole="T_InOutLibraryDetail" ToRole="T_InOutLibrary" />
+          <NavigationProperty Name="T_Product" Relationship="JXCModel.FK_T_INLIBR_REFERENCE_T_PRODUC" FromRole="T_InOutLibraryDetail" ToRole="T_Product" />
+        </EntityType>
+        <Association Name="FK_T_INLIBR_REFERENCE_T_INLIBR">
+          <End Type="JXCModel.T_InOutLibrary" Role="T_InOutLibrary" Multiplicity="0..1" />
+          <End Type="JXCModel.T_InOutLibraryDetail" Role="T_InOutLibraryDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_InOutLibrary">
+              <PropertyRef Name="F_InOutLibraryID" />
+            </Principal>
+            <Dependent Role="T_InOutLibraryDetail">
+              <PropertyRef Name="F_InOutLibraryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_INLIBR_REFERENCE_T_PRODUC">
+          <End Type="JXCModel.T_Product" Role="T_Product" Multiplicity="0..1" />
+          <End Type="JXCModel.T_InOutLibraryDetail" Role="T_InOutLibraryDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Product">
+              <PropertyRef Name="F_ProductID" />
+            </Principal>
+            <Dependent Role="T_InOutLibraryDetail">
+              <PropertyRef Name="F_ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="JXCModelStoreContainer" CdmEntityContainer="JXCEntities">
+          <EntitySetMapping Name="T_Customer"><EntityTypeMapping TypeName="JXCModel.T_Customer"><MappingFragment StoreEntitySet="T_Customer">
+            <ScalarProperty Name="F_Status" ColumnName="F_Status" />
+                <ScalarProperty Name="F_CustomerID" ColumnName="F_CustomerID" />
+            <ScalarProperty Name="F_CustomerName" ColumnName="F_CustomerName" />
+            <ScalarProperty Name="F_Sex" ColumnName="F_Sex" />
+            <ScalarProperty Name="F_Contact" ColumnName="F_Contact" />
+            <ScalarProperty Name="F_Phone" ColumnName="F_Phone" />
+            <ScalarProperty Name="F_Tel" ColumnName="F_Tel" />
+            <ScalarProperty Name="F_DeliveryAddress" ColumnName="F_DeliveryAddress" />
+            <ScalarProperty Name="F_Bank" ColumnName="F_Bank" />
+            <ScalarProperty Name="F_Card" ColumnName="F_Card" />
+            <ScalarProperty Name="F_ObjectID" ColumnName="F_ObjectID" />
+            <ScalarProperty Name="F_Remark" ColumnName="F_Remark" />
+            <ScalarProperty Name="F_AddUser" ColumnName="F_AddUser" />
+            <ScalarProperty Name="F_AddDate" ColumnName="F_AddDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_Deploy"><EntityTypeMapping TypeName="JXCModel.T_Deploy"><MappingFragment StoreEntitySet="T_Deploy">
+            <ScalarProperty Name="F_ID" ColumnName="F_ID" />
+            <ScalarProperty Name="F_WarehouseID" ColumnName="F_WarehouseID" />
+            <ScalarProperty Name="F_StoreID" ColumnName="F_StoreID" />
+            <ScalarProperty Name="F_ProductID" ColumnName="F_ProductID" />
+            <ScalarProperty Name="F_DeployType" ColumnName="F_DeployType" />
+            <ScalarProperty Name="F_Num" ColumnName="F_Num" />
+            <ScalarProperty Name="F_User" ColumnName="F_User" />
+            <ScalarProperty Name="F_Date" ColumnName="F_Date" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_Dictionary"><EntityTypeMapping TypeName="JXCModel.T_Dictionary"><MappingFragment StoreEntitySet="T_Dictionary">
+            <ScalarProperty Name="F_Status" ColumnName="F_Status" />
+                <ScalarProperty Name="F_DictionaryID" ColumnName="F_DictionaryID" />
+            <ScalarProperty Name="F_DicName" ColumnName="F_DicName" />
+            <ScalarProperty Name="F_ParID" ColumnName="F_ParID" />
+            <ScalarProperty Name="F_DicCode" ColumnName="F_DicCode" />
+            <ScalarProperty Name="F_IsPublic" ColumnName="F_IsPublic" />
+            <ScalarProperty Name="F_ObjectID" ColumnName="F_ObjectID" />
+            <ScalarProperty Name="F_AddDate" ColumnName="F_AddDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_Finance"><EntityTypeMapping TypeName="JXCModel.T_Finance"><MappingFragment StoreEntitySet="T_Finance">
+            <ScalarProperty Name="F_FinanceID" ColumnName="F_FinanceID" />
+            <ScalarProperty Name="F_ObjectID" ColumnName="F_ObjectID" />
+            <ScalarProperty Name="F_AccountsType" ColumnName="F_AccountsType" />
+            <ScalarProperty Name="F_MainCtg" ColumnName="F_MainCtg" />
+            <ScalarProperty Name="F_SubCtg" ColumnName="F_SubCtg" />
+            <ScalarProperty Name="F_Money" ColumnName="F_Money" />
+            <ScalarProperty Name="F_Remark" ColumnName="F_Remark" />
+            <ScalarProperty Name="F_AddUser" ColumnName="F_AddUser" />
+            <ScalarProperty Name="F_AddDate" ColumnName="F_AddDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_Inventory"><EntityTypeMapping TypeName="JXCModel.T_Inventory"><MappingFragment StoreEntitySet="T_Inventory">
+            <ScalarProperty Name="F_InventoryID" ColumnName="F_InventoryID" />
+            <ScalarProperty Name="F_Code" ColumnName="F_Code" />
+            <ScalarProperty Name="F_ObjectID" ColumnName="F_ObjectID" />
+            <ScalarProperty Name="F_Remark" ColumnName="F_Remark" />
+            <ScalarProperty Name="F_User" ColumnName="F_User" />
+            <ScalarProperty Name="F_InventoryDate" ColumnName="F_InventoryDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_InventoryDetail"><EntityTypeMapping TypeName="JXCModel.T_InventoryDetail"><MappingFragment StoreEntitySet="T_InventoryDetail">
+            <ScalarProperty Name="F_ID" ColumnName="F_ID" />
+            <ScalarProperty Name="F_InventoryID" ColumnName="F_InventoryID" />
+            <ScalarProperty Name="F_ProductID" ColumnName="F_ProductID" />
+            <ScalarProperty Name="F_StockNum" ColumnName="F_StockNum" />
+            <ScalarProperty Name="F_RealNum" ColumnName="F_RealNum" />
+            <ScalarProperty Name="F_ErrorNum" ColumnName="F_ErrorNum" />
+            <ScalarProperty Name="F_Unit" ColumnName="F_Unit" />
+            <ScalarProperty Name="F_Price" ColumnName="F_Price" />
+            <ScalarProperty Name="F_ErrorMoney" ColumnName="F_ErrorMoney" />
+            <ScalarProperty Name="F_Remark" ColumnName="F_Remark" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_Object"><EntityTypeMapping TypeName="JXCModel.T_Object"><MappingFragment StoreEntitySet="T_Object">
+            <ScalarProperty Name="F_WarehouseID" ColumnName="F_WarehouseID" />
+                <ScalarProperty Name="F_Status" ColumnName="F_Status" />
+                <ScalarProperty Name="F_ObjectID" ColumnName="F_ObjectID" />
+            <ScalarProperty Name="F_ObjectType" ColumnName="F_ObjectType" />
+            <ScalarProperty Name="F_ObjectName" ColumnName="F_ObjectName" />
+            <ScalarProperty Name="F_Address" ColumnName="F_Address" />
+            <ScalarProperty Name="F_Conatct" ColumnName="F_Conatct" />
+            <ScalarProperty Name="F_Tel" ColumnName="F_Tel" />
+            <ScalarProperty Name="F_AddDate" ColumnName="F_AddDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_Orders"><EntityTypeMapping TypeName="JXCModel.T_Orders"><MappingFragment StoreEntitySet="T_Orders">
+            <ScalarProperty Name="F_OrderID" ColumnName="F_OrderID" />
+            <ScalarProperty Name="F_OrderCode" ColumnName="F_OrderCode" />
+            <ScalarProperty Name="F_BranchID" ColumnName="F_BranchID" />
+            <ScalarProperty Name="F_WarehouseID" ColumnName="F_WarehouseID" />
+            <ScalarProperty Name="F_CustomerID" ColumnName="F_CustomerID" />
+            <ScalarProperty Name="F_DeliveryTime" ColumnName="F_DeliveryTime" />
+            <ScalarProperty Name="F_Earnest" ColumnName="F_Earnest" />
+            <ScalarProperty Name="F_TotalMoney" ColumnName="F_TotalMoney" />
+            <ScalarProperty Name="F_OverMoney" ColumnName="F_OverMoney" />
+            <ScalarProperty Name="F_PersonID" ColumnName="F_PersonID" />
+            <ScalarProperty Name="F_SellDate" ColumnName="F_SellDate" />
+            <ScalarProperty Name="F_Status" ColumnName="F_Status" />
+            <ScalarProperty Name="F_Remark" ColumnName="F_Remark" />
+            <ScalarProperty Name="F_UserID" ColumnName="F_UserID" />
+            <ScalarProperty Name="F_AddDate" ColumnName="F_AddDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_OrdersDetail"><EntityTypeMapping TypeName="JXCModel.T_OrdersDetail"><MappingFragment StoreEntitySet="T_OrdersDetail">
+            <ScalarProperty Name="F_Status" ColumnName="F_Status" />
+                <ScalarProperty Name="F_ID" ColumnName="F_ID" />
+            <ScalarProperty Name="F_OrderID" ColumnName="F_OrderID" />
+            <ScalarProperty Name="F_ProductID" ColumnName="F_ProductID" />
+            <ScalarProperty Name="F_UnitPrice" ColumnName="F_UnitPrice" />
+            <ScalarProperty Name="F_DiscountRate" ColumnName="F_DiscountRate" />
+            <ScalarProperty Name="F_Amount" ColumnName="F_Amount" />
+            <ScalarProperty Name="F_Total" ColumnName="F_Total" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_Person"><EntityTypeMapping TypeName="JXCModel.T_Person"><MappingFragment StoreEntitySet="T_Person">
+            <ScalarProperty Name="F_Status" ColumnName="F_Status" />
+                <ScalarProperty Name="F_IsAdmin" ColumnName="F_IsAdmin" />
+                <ScalarProperty Name="F_PersonID" ColumnName="F_PersonID" />
+            <ScalarProperty Name="F_Name" ColumnName="F_Name" />
+            <ScalarProperty Name="F_Sex" ColumnName="F_Sex" />
+            <ScalarProperty Name="F_Phone" ColumnName="F_Phone" />
+            <ScalarProperty Name="F_Address" ColumnName="F_Address" />
+            <ScalarProperty Name="F_IDCard" ColumnName="F_IDCard" />
+            <ScalarProperty Name="F_Wage" ColumnName="F_Wage" />
+            <ScalarProperty Name="F_EnterDate" ColumnName="F_EnterDate" />
+            <ScalarProperty Name="F_UserType" ColumnName="F_UserType" />
+            <ScalarProperty Name="F_ObjectID" ColumnName="F_ObjectID" />
+            <ScalarProperty Name="F_AddDate" ColumnName="F_AddDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_Product"><EntityTypeMapping TypeName="JXCModel.T_Product"><MappingFragment StoreEntitySet="T_Product">
+                <ScalarProperty Name="F_ObjectID" ColumnName="F_ObjectID" />
+                <ScalarProperty Name="F_Status" ColumnName="F_Status" />
+                <ScalarProperty Name="F_ProductID" ColumnName="F_ProductID" />
+            <ScalarProperty Name="F_ProductName" ColumnName="F_ProductName" />
+            <ScalarProperty Name="F_MainCtg" ColumnName="F_MainCtg" />
+            <ScalarProperty Name="F_SubCtg" ColumnName="F_SubCtg" />
+            <ScalarProperty Name="F_Code" ColumnName="F_Code" />
+            <ScalarProperty Name="F_Unit" ColumnName="F_Unit" />
+            <ScalarProperty Name="F_PurchasePrice" ColumnName="F_PurchasePrice" />
+            <ScalarProperty Name="F_SellPrice" ColumnName="F_SellPrice" />
+            <ScalarProperty Name="F_Size" ColumnName="F_Size" />
+            <ScalarProperty Name="F_Weight" ColumnName="F_Weight" />
+            <ScalarProperty Name="F_Amount" ColumnName="F_Amount" />
+            <ScalarProperty Name="F_Alarm" ColumnName="F_Alarm" />
+            <ScalarProperty Name="F_BonusType" ColumnName="F_BonusType" />
+            <ScalarProperty Name="F_Bonus" ColumnName="F_Bonus" />
+            <ScalarProperty Name="F_Image" ColumnName="F_Image" />
+            <ScalarProperty Name="F_Remark" ColumnName="F_Remark" />
+            <ScalarProperty Name="F_AddUser" ColumnName="F_AddUser" />
+            <ScalarProperty Name="F_AddDate" ColumnName="F_AddDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_SalesBonus"><EntityTypeMapping TypeName="JXCModel.T_SalesBonus"><MappingFragment StoreEntitySet="T_SalesBonus">
+            <ScalarProperty Name="F_BonusID" ColumnName="F_BonusID" />
+            <ScalarProperty Name="F_PersonID" ColumnName="F_PersonID" />
+            <ScalarProperty Name="F_OrderID" ColumnName="F_OrderID" />
+            <ScalarProperty Name="F_BonusMoney" ColumnName="F_BonusMoney" />
+            <ScalarProperty Name="F_AddDate" ColumnName="F_AddDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_SamplesStore"><EntityTypeMapping TypeName="JXCModel.T_SamplesStore"><MappingFragment StoreEntitySet="T_SamplesStore">
+            <ScalarProperty Name="F_ID" ColumnName="F_ID" />
+            <ScalarProperty Name="F_ObjectID" ColumnName="F_ObjectID" />
+            <ScalarProperty Name="F_ProductID" ColumnName="F_ProductID" />
+            <ScalarProperty Name="F_Num" ColumnName="F_Num" />
+            <ScalarProperty Name="F_User" ColumnName="F_User" />
+            <ScalarProperty Name="F_Date" ColumnName="F_Date" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_Stock"><EntityTypeMapping TypeName="JXCModel.T_Stock"><MappingFragment StoreEntitySet="T_Stock">
+            <ScalarProperty Name="F_StockID" ColumnName="F_StockID" />
+            <ScalarProperty Name="F_ProductID" ColumnName="F_ProductID" />
+            <ScalarProperty Name="F_ObjectID" ColumnName="F_ObjectID" />
+            <ScalarProperty Name="F_StockNum" ColumnName="F_StockNum" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_StockDetail"><EntityTypeMapping TypeName="JXCModel.T_StockDetail"><MappingFragment StoreEntitySet="T_StockDetail">
+            <ScalarProperty Name="F_Status" ColumnName="F_Status" />
+                <ScalarProperty Name="F_ChangeNum" ColumnName="F_ChangeNum" />
+                <ScalarProperty Name="F_LibID" ColumnName="F_LibID" />
+                <ScalarProperty Name="F_ChangType" ColumnName="F_ChangType" />
+                <ScalarProperty Name="F_ID" ColumnName="F_ID" />
+            <ScalarProperty Name="F_StockID" ColumnName="F_StockID" />
+            <ScalarProperty Name="F_StartNum" ColumnName="F_StartNum" />
+            <ScalarProperty Name="F_EndNum" ColumnName="F_EndNum" />
+            <ScalarProperty Name="F_Remark" ColumnName="F_Remark" />
+            <ScalarProperty Name="F_AddUser" ColumnName="F_AddUser" />
+            <ScalarProperty Name="F_AddDate" ColumnName="F_AddDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_User"><EntityTypeMapping TypeName="JXCModel.T_User"><MappingFragment StoreEntitySet="T_User">
+            <ScalarProperty Name="F_Status" ColumnName="F_Status" />
+                <ScalarProperty Name="F_UserID" ColumnName="F_UserID" />
+            <ScalarProperty Name="F_PersonID" ColumnName="F_PersonID" />
+            <ScalarProperty Name="F_Account" ColumnName="F_Account" />
+            <ScalarProperty Name="F_UserPwd" ColumnName="F_UserPwd" />
+            <ScalarProperty Name="F_UserType" ColumnName="F_UserType" />
+            <ScalarProperty Name="F_ObjID" ColumnName="F_ObjID" />
+            <ScalarProperty Name="F_RegDate" ColumnName="F_RegDate" />
+            <ScalarProperty Name="F_FirstDate" ColumnName="F_FirstDate" />
+            <ScalarProperty Name="F_LastDate" ColumnName="F_LastDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_Delivery">
+            <EntityTypeMapping TypeName="JXCModel.T_Delivery">
+              <MappingFragment StoreEntitySet="T_Delivery">
+                <ScalarProperty Name="F_Date" ColumnName="F_Date" />
+                <ScalarProperty Name="F_Status" ColumnName="F_Status" />
+                <ScalarProperty Name="F_DeliveryMoney" ColumnName="F_DeliveryMoney" />
+                <ScalarProperty Name="F_Num" ColumnName="F_Num" />
+                <ScalarProperty Name="F_DeliveryPerson" ColumnName="F_DeliveryPerson" />
+                <ScalarProperty Name="F_ProductID" ColumnName="F_ProductID" />
+                <ScalarProperty Name="F_OrderID" ColumnName="F_OrderID" />
+                <ScalarProperty Name="F_DeliveryID" ColumnName="F_DeliveryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_InOutLibrary">
+            <EntityTypeMapping TypeName="JXCModel.T_InOutLibrary">
+              <MappingFragment StoreEntitySet="T_InOutLibrary">
+                <ScalarProperty Name="F_AddDate" ColumnName="F_AddDate" />
+                <ScalarProperty Name="F_AddUser" ColumnName="F_AddUser" />
+                <ScalarProperty Name="F_Status" ColumnName="F_Status" />
+                <ScalarProperty Name="F_Remark" ColumnName="F_Remark" />
+                <ScalarProperty Name="F_IsPay" ColumnName="F_IsPay" />
+                <ScalarProperty Name="F_Total" ColumnName="F_Total" />
+                <ScalarProperty Name="F_Code" ColumnName="F_Code" />
+                <ScalarProperty Name="F_ChangeType" ColumnName="F_ChangeType" />
+                <ScalarProperty Name="F_ObjectID" ColumnName="F_ObjectID" />
+                <ScalarProperty Name="F_InOutLibraryID" ColumnName="F_InOutLibraryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_InOutLibraryDetail">
+            <EntityTypeMapping TypeName="JXCModel.T_InOutLibraryDetail">
+              <MappingFragment StoreEntitySet="T_InOutLibraryDetail">
+                <ScalarProperty Name="F_AddDate" ColumnName="F_AddDate" />
+                <ScalarProperty Name="F_Total" ColumnName="F_Total" />
+                <ScalarProperty Name="F_Price" ColumnName="F_Price" />
+                <ScalarProperty Name="F_Amount" ColumnName="F_Amount" />
+                <ScalarProperty Name="F_InOutLibraryID" ColumnName="F_InOutLibraryID" />
+                <ScalarProperty Name="F_ProductID" ColumnName="F_ProductID" />
+                <ScalarProperty Name="F_ID" ColumnName="F_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="JXCModel" ZoomLevel="74">
+        <EntityTypeShape EntityType="JXCModel.T_Customer" Width="1.5" PointX="1.5" PointY="3.75" Height="3.8802294921874996" IsExpanded="true" />
+        <EntityTypeShape EntityType="JXCModel.T_Deploy" Width="1.5" PointX="3" PointY="8.625" Height="2.7341113281249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="JXCModel.T_Dictionary" Width="1.5" PointX="5.75" PointY="2.125" Height="2.3520719401041656" IsExpanded="true" />
+        <EntityTypeShape EntityType="JXCModel.T_Finance" Width="1.5" PointX="7.75" PointY="2.125" Height="2.7341113281249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="JXCModel.T_Inventory" Width="1.5" PointX="3.75" PointY="17" Height="2.3520719401041674" IsExpanded="true" />
+        <EntityTypeShape EntityType="JXCModel.T_InventoryDetail" Width="1.5" PointX="6" PointY="11.5" Height="3.3071704101562496" IsExpanded="true" />
+        <EntityTypeShape EntityType="JXCModel.T_Object" Width="1.5" PointX="1.5" PointY="17.25" Height="3.1161507161458353" IsExpanded="true" />
+        <EntityTypeShape EntityType="JXCModel.T_Orders" Width="1.5" PointX="3.75" PointY="0.75" Height="4.6443082682291656" IsExpanded="true" />
+        <EntityTypeShape EntityType="JXCModel.T_OrdersDetail" Width="1.5" PointX="6" PointY="7.75" Height="2.7341113281250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="JXCModel.T_Person" Width="1.5" PointX="1.5" PointY="29.375" Height="3.8802294921875031" IsExpanded="true" />
+        <EntityTypeShape EntityType="JXCModel.T_Product" Width="1.5" PointX="0.75" PointY="10.375" Height="5.9814461263020853" IsExpanded="true" />
+        <EntityTypeShape EntityType="JXCModel.T_SalesBonus" Width="1.5" PointX="3.75" PointY="29.5" Height="2.1610522460937531" IsExpanded="true" />
+        <EntityTypeShape EntityType="JXCModel.T_SamplesStore" Width="1.5" PointX="3" PointY="22.875" Height="2.3520719401041674" IsExpanded="true" />
+        <EntityTypeShape EntityType="JXCModel.T_Stock" Width="1.5" PointX="3" PointY="26.25" Height="2.161052246093746" IsExpanded="true" />
+        <EntityTypeShape EntityType="JXCModel.T_StockDetail" Width="1.5" PointX="5.25" PointY="26" Height="2.5430916341145888" IsExpanded="true" />
+        <EntityTypeShape EntityType="JXCModel.T_User" Width="1.5" PointX="3.75" PointY="32.375" Height="2.9251310221354174" IsExpanded="true" />
+        <AssociationConnector Association="JXCModel.FK_T_CUSTOM_REFERENCE_T_OBJECT" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.625" PointY="17.25" />
+          <ConnectorPoint PointX="2.625" PointY="7.8212491861979156" />
+        </AssociationConnector>
+        <AssociationConnector Association="JXCModel.FK_T_ORDERS_REFERENCE_T_CUSTOM" ManuallyRouted="false">
+          <ConnectorPoint PointX="3" PointY="4.5721541341145837" />
+          <ConnectorPoint PointX="3.1666666666666665" PointY="4.5721541341145828" />
+          <ConnectorPoint PointX="3.3333333333333335" PointY="4.5721541341145837" />
+          <ConnectorPoint PointX="3.75" PointY="4.5721541341145837" />
+        </AssociationConnector>
+        <AssociationConnector Association="JXCModel.FK_T_DEPLOY_REFERENCE_T_PRODUC" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="10.8670556640625" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="10.867055664062498" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="10.8670556640625" />
+          <ConnectorPoint PointX="3" PointY="10.8670556640625" />
+        </AssociationConnector>
+        <AssociationConnector Association="JXCModel.FK_T_INVENT_REFERENCE_T_INVENT" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.90625" PointY="17" />
+          <ConnectorPoint PointX="4.90625" PointY="11.78125" />
+          <ConnectorPoint PointX="6" PointY="11.78125" />
+        </AssociationConnector>
+        <AssociationConnector Association="JXCModel.FK_T_INVENT_REFERENCE_T_PRODUC" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="11.984375" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="11.984374999999998" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="11.984375" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="11.984375" />
+          <ConnectorPoint PointX="4.989583333333333" PointY="11.984375" />
+          <ConnectorPoint PointX="6" PointY="11.984375" />
+        </AssociationConnector>
+        <AssociationConnector Association="JXCModel.FK_T_PERSON_REFERENCE_T_OBJECT" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.625" PointY="20.366150716145835" />
+          <ConnectorPoint PointX="2.625" PointY="29.375" />
+        </AssociationConnector>
+        <AssociationConnector Association="JXCModel.FK_T_ORDERS_REFERENCE_T_ORDERS" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.80468625" PointY="5.3943082682291656" />
+          <ConnectorPoint PointX="4.80468625" PointY="8.0021847965494786" />
+          <ConnectorPoint PointX="6" PointY="8.0021847965494786" />
+        </AssociationConnector>
+        <AssociationConnector Association="JXCModel.FK_T_ORDERS_REFERENCE_T_PERSON" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.031248" PointY="29.375" />
+          <ConnectorPoint PointX="2.031248" PointY="25.241150716145839" />
+          <ConnectorPoint PointX="2.5" PointY="25.241150716145839" />
+          <ConnectorPoint PointX="2.5" PointY="20.616150716145839" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="20.616150716145839" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="20.616150716145839" />
+          <ConnectorPoint PointX="3.25" PointY="20.616150716145839" />
+          <ConnectorPoint PointX="3.25" PointY="16.797465820312503" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="16.797465820312503" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="16.797465820312503" />
+          <ConnectorPoint PointX="2.5" PointY="16.797465820312503" />
+          <ConnectorPoint PointX="2.5" PointY="8.0712491861979156" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="8.0712491861979156" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="8.0712491861979156" />
+          <ConnectorPoint PointX="3.25" PointY="8.0712491861979156" />
+          <ConnectorPoint PointX="3.25" PointY="2.6298250670572978" />
+          <ConnectorPoint PointX="3.75" PointY="2.6298250670572978" />
+        </AssociationConnector>
+        <AssociationConnector Association="JXCModel.FK_T_ORDERS_REFERENCE_T_PRODUC" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.09375" PointY="10.375" />
+          <ConnectorPoint PointX="1.09375" PointY="8.3168745930989587" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="8.3168745930989569" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="8.3168745930989587" />
+          <ConnectorPoint PointX="6" PointY="8.3168745930989587" />
+        </AssociationConnector>
+        <AssociationConnector Association="JXCModel.FK_T_SALESB_REFERENCE_T_PERSON" ManuallyRouted="false">
+          <ConnectorPoint PointX="3" PointY="30.580526123046877" />
+          <ConnectorPoint PointX="3.75" PointY="30.580526123046877" />
+        </AssociationConnector>
+        <AssociationConnector Association="JXCModel.FK_T_USER_REFERENCE_T_PERSON" ManuallyRouted="false">
+          <ConnectorPoint PointX="3" PointY="32.815114746093755" />
+          <ConnectorPoint PointX="3.75" PointY="32.815114746093755" />
+        </AssociationConnector>
+        <AssociationConnector Association="JXCModel.FK_T_SAMPLE_REFERENCE_T_PRODUC" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.7734382499999999" PointY="16.547465820312503" />
+          <ConnectorPoint PointX="1.7734382499999999" PointY="17" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="17" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="17" />
+          <ConnectorPoint PointX="3.1666666666666665" PointY="17" />
+          <ConnectorPoint PointX="3.3333333333333335" PointY="17" />
+          <ConnectorPoint PointX="3.5" PointY="17" />
+          <ConnectorPoint PointX="3.5" PointY="21.625" />
+          <ConnectorPoint PointX="3.4583333333333335" PointY="21.625" />
+          <ConnectorPoint PointX="3.2916666666666665" PointY="21.625" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="21.625" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="21.625" />
+          <ConnectorPoint PointX="2.375" PointY="21.625" />
+          <ConnectorPoint PointX="2.375" PointY="24.051035970052084" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="24.051035970052084" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="24.051035970052084" />
+          <ConnectorPoint PointX="3" PointY="24.051035970052084" />
+        </AssociationConnector>
+        <AssociationConnector Association="JXCModel.FK_T_STOCK_REFERENCE_T_PRODUC" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.2304671249999999" PointY="16.547465820312503" />
+          <ConnectorPoint PointX="1.2304671249999999" PointY="16.984375" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="16.984375" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="16.984375" />
+          <ConnectorPoint PointX="3.1666666666666665" PointY="16.984375" />
+          <ConnectorPoint PointX="3.3333333333333335" PointY="16.984375" />
+          <ConnectorPoint PointX="3.375" PointY="16.984375" />
+          <ConnectorPoint PointX="3.375" PointY="21.875" />
+          <ConnectorPoint PointX="2.5625" PointY="21.875" />
+          <ConnectorPoint PointX="2.5625" PointY="27.330526123046873" />
+          <ConnectorPoint PointX="3" PointY="27.330526123046873" />
+        </AssociationConnector>
+        <AssociationConnector Association="JXCModel.FK_T_STOCKD_REFERENCE_T_STOCK" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="27.330526123046873" />
+          <ConnectorPoint PointX="5.25" PointY="27.330526123046873" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="JXCModel.T_Delivery" Width="1.5" PointX="9" PointY="7.125" Height="2.9251310221354174" />
+        <AssociationConnector Association="JXCModel.FK_T_DELIVE_REFERENCE_T_ORDERS" >
+          <ConnectorPoint PointX="5.058595625" PointY="5.3943082682291656" />
+          <ConnectorPoint PointX="5.058595625" PointY="7.40625" />
+          <ConnectorPoint PointX="9" PointY="7.40625" />
+        </AssociationConnector>
+        <AssociationConnector Association="JXCModel.FK_T_DELIVE_REFERENCE_T_PRODUC" >
+          <ConnectorPoint PointX="2.25" PointY="15.734538574218753" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="15.734538574218751" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="15.734538574218753" />
+          <ConnectorPoint PointX="3.5416666666666665" PointY="15.734538574218753" />
+          <ConnectorPoint PointX="3.7083333333333335" PointY="15.734538574218753" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="15.734538574218753" />
+          <ConnectorPoint PointX="4.989583333333333" PointY="15.734538574218753" />
+          <ConnectorPoint PointX="9.75" PointY="15.734538574218753" />
+          <ConnectorPoint PointX="9.75" PointY="10.050131022135417" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="JXCModel.T_InOutLibrary" Width="1.5" PointX="0.75" PointY="21.875" Height="3.1161507161458388" />
+        <EntityTypeShape EntityType="JXCModel.T_InOutLibraryDetail" Width="1.5" PointX="3" PointY="12.125" Height="2.7341113281250031" />
+        <AssociationConnector Association="JXCModel.FK_T_INLIBR_REFERENCE_T_INLIBR" >
+          <ConnectorPoint PointX="2.25" PointY="22.963018485026041" />
+          <ConnectorPoint PointX="2.2916666666666665" PointY="22.963018485026041" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="22.963018485026041" />
+          <ConnectorPoint PointX="2.75" PointY="22.963018485026041" />
+          <ConnectorPoint PointX="2.75" PointY="22.625" />
+          <ConnectorPoint PointX="3.625" PointY="22.625" />
+          <ConnectorPoint PointX="3.625" PointY="15.234111328125003" />
+          <ConnectorPoint PointX="3.75" PointY="15.234111328125003" />
+          <ConnectorPoint PointX="3.75" PointY="14.859111328125003" />
+        </AssociationConnector>
+        <AssociationConnector Association="JXCModel.FK_T_INLIBR_REFERENCE_T_PRODUC" >
+          <ConnectorPoint PointX="2.25" PointY="13.492055664062502" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="13.4920556640625" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="13.492055664062502" />
+          <ConnectorPoint PointX="3" PointY="13.492055664062502" />
+        </AssociationConnector>
+        </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,44 @@
+﻿/**************************************** Dictionary.aspx start *****************************************/
+.leftbar, .rightbar{float:left;margin-top:30px;}
+
+.leftbar{width:300px;border-right:solid 1px #ddd;}
+
+.rightbar{margin-left:20px;}
+
+.functionbabr{width:100%;margin-bottom:20px;overflow:hidden;}
+.btn{background-color:#fff;padding:5px 10px;border:solid 1px #ddd;cursor:pointer;color:#009999;}
+.tbl{width:300px;font:normal 13px "宋体","微软雅黑";}
+.tbl tr{height:30px;line-height:30px;}
+.tbl th{width:80px;}
+.tbl .txt{width:200px;height:20px;line-height:20px;padding-left:5px;}
+
+/**************************************** 搜索栏 ********************************************/
+.searchbar{font-size:13px;}
+.searchbar tr{height:30px;line-height:30px;}
+.searchbar th{width:60px;font:normal 13px "宋体","微软雅黑";text-align:right;}
+.searchbar td{padding:0px 10px;}
+.searchbar .txt{width:200px; height:20px;line-height:20px;padding-left:5px;}
+.searchbar .btn{border:solid 1px #009999;padding:5px 10px;color:#666;cursor:pointer;}
+.searchbar a{color:#009999;}
+
+.hr{width:100%;margin:15px 0px;border-top:dashed 1px #ddd;}
+
+/***************************************** 弹出层 *******************************************/
+.pop{font:normal 13px "宋体","微软雅黑";}
+.pop table{max-width:600px;}
+.pop tr{height:30px;line-height:30px;}
+.pop th{width:80px;}
+.pop .txt,.pop .ltxt{height:20px;line-height:20px;padding-left:5px;}
+.pop .txt{width:180px;}
+.pop .ltxt{width:490px;}
+
+.tbl_data{width:100%;font:normal 13px "Arial Narrow", HELVETICA,"宋体","微软雅黑";}
+.tbl_data tr{height:30px;line-height:30px;}
+.tbl_data th,.tbl_data tbody td{text-align:center;border-bottom:dotted 1px #ddd;}
+.tbl_data td a{margin:0px 10px;color:#0066cc;}
+
+/********************************** aspnetpager分页控件样式 *************************************/
+.pages { text-align:center;overflow:hidden;color: #999; }
+.pages a, .pages .cpb { display:inline-block;text-decoration:none;line-height:1.5em;padding: 2px 5px; border: 1px solid #ddd;background: #ffff;margin:0 2px; font-size:13px; color:#000;}
+.pages a:hover { background-color: #E61636; color:#fff;border:1px solid #E61636; text-decoration:none;}
+.pages .cpb { font-weight: bold; color: #fff; background: #E61636; border:1px solid #E61636;}

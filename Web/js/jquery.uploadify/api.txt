@@ -1,0 +1,136 @@
+Uploadify有一个参数是 buttonText 这个无论你怎么改都不支持中文，因为插件在js里用了一个转码方法把这个参数的值转过码了，解码的地方在那个swf文件里，看不到代码，所以这条路不行。 
+
+    另一个参数，网上很少提到，是 buttonImg( 按钮图片)，这时你完全可以用一个图片来替换掉插件自带的那个黑色的flash浏览按钮，只要你自己的图片上是中文，这不就解决了中文按钮问题么？如果只加这一个，你会发现你的按钮图片下面有一片白色区域，其实就是那个flash留下的，白色区域表示鼠标可用范围，这个范围可以用width,height来调整。还有一个参数 wmode 它的默认值是opaque，把它改成transparent就行了，也就是把那片白色区域透明化。再用刚才说的方法，把按键点击范围设置成跟你图片一样大就完全OK了。 
+
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ 
+
+    Uploadify的用法就不说了，网上文章很多，跟别的jquery插件用法一样，就是几种文件的摆放路径而已。 
+
+    以下附上Uploadify部分参数的介绍，要看全部的就去看其API文件了，一般在下载的包里都有。 
+
+   
+
+　uploader ： uploadify.swf 文件的相对路径，该swf文件是一个带有文字BROWSE的按钮，点击后弹出打开文件对话框，默认值：uploadify.swf。 
+
+　　script ： 后台处理程序的相对路径 。默认值：uploadify.php 
+
+　　checkScript ：用来判断上传选择的文件在服务器是否存在的后台处理程序的相对路径 
+
+　　fileDataName ：设置一个名字，在服务器处理程序中根据该名字来取上传文件的数据。默认为Filedata 
+
+　　method ： 提交方式Post 或Get 默认为Post 
+
+　　scriptAccess ：flash脚本文件的访问模式，如果在本地测试设置为always，默认值：sameDomain 
+
+　　folder ： 上传文件存放的目录 。 
+
+　　queueID ： 文件队列的ID，该ID与存放文件队列的div的ID一致。 
+
+　　queueSizeLimit ： 当允许多文件生成时，设置选择文件的个数，默认值：999 。 
+
+　　multi ： 设置为true时可以上传多个文件。 
+
+　　auto ： 设置为true当选择文件后就直接上传了，为false需要点击上传按钮才上传 。 
+
+　　fileDesc ： 这个属性值必须设置fileExt属性后才有效，用来设置选择文件对话框中的提示文本，如设置fileDesc为“请选择rar doc pdf文件”，打开文件选择框效果如下图： 
+
+　　fileExt ： 设置可以选择的文件的类型，格式如：'*.doc;*.pdf;*.rar' 。 
+
+　　sizeLimit ： 上传文件的大小限制 。 
+
+　　simUploadLimit ： 允许同时上传的个数 默认值：1 。 
+
+　　buttonText ： 浏览按钮的文本，默认值：BROWSE 。 
+
+　　buttonImg ： 浏览按钮的图片的路径 。 
+
+　　hideButton ： 设置为true则隐藏浏览按钮的图片 。 
+
+　　rollover ： 值为true和false，设置为true时当鼠标移到浏览按钮上时有反转效果。 
+
+　　width ： 设置浏览按钮的宽度 ，默认值：110。 
+
+　　height ： 设置浏览按钮的高度 ，默认值：30。 
+
+　　wmode ： 设置该项为transparent 可以使浏览按钮的flash背景文件透明，并且flash文件会被置为页面的最高层。 默认值：opaque 。 
+
+　　cancelImg ：选择文件到文件队列中后的每一个文件上的关闭按钮图标 
+
+
+Uploadify还自带了很多参数及有用的方法和回调函数，都在API里，虽然是全英文的，但很容易看懂，这里就不说了。 
+
+以下是我用到的代码，可以参考一下： 
+
+view plaincopy to clipboardprint?
+<script type="text/javascript">   
+$(document).ready(function() {   
+$("#uploadify").uploadify({   
+    'uploader'       : 'images/uploadify.swf',   
+    'script'         : '<%=request.getContextPath()%>/content/ImportScheduleCommitAction.do',   
+    'cancelImg'      : 'images/cancel.png',   
+    'folder'         : '/',   
+    'queueID'        : 'fileQueue',   
+    'fileDataName'   : 'uploadify',   
+    'fileDesc'       : '支持格式:xls.',    
+    'fileExt'        : '*.xls',   
+    'auto'           : false,   
+    'multi'          : true,   
+    'height'         : 20,   
+    'width'          : 50,   
+    'simUploadLimit' : 3,   
+   //'buttonText'     : 'fdsfdsf...',   
+    'buttonImg'      : 'images/browse.jpg',   
+   // 'hideButton'     : true,   
+   // 'rollover'       : true,   
+    'wmode'          : 'transparent' ,   
+    onComplete       : function (event, queueID, fileObj, response, data)   
+     {    
+      $('<li></li>').appendTo('.files').text(response);    
+     },    
+    onError          : function(event, queueID, fileObj)   
+     {    
+       alert("文件:" + fileObj.name + " 上传失败");    
+     }    
+// onCancel         : function(event, queueID, fileObj)   
+// {    
+//     alert("取消文件：" + fileObj.name);    
+// }    
+   }); 
+<script type="text/javascript">
+$(document).ready(function() {
+$("#uploadify").uploadify({
+    'uploader'       : 'images/uploadify.swf',
+    'script'         : '<%=request.getContextPath()%>/content/ImportScheduleCommitAction.do',
+    'cancelImg'      : 'images/cancel.png',
+    'folder'         : '/',
+    'queueID'        : 'fileQueue',
+    'fileDataName'   : 'uploadify',
+    'fileDesc'       : '支持格式:xls.', 
+    'fileExt'        : '*.xls',
+    'auto'           : false,
+    'multi'          : true,
+    'height'         : 20,
+    'width'          : 50,
+    'simUploadLimit' : 3,
+   //'buttonText'     : 'fdsfdsf...',
+    'buttonImg'      : 'images/browse.jpg',
+   // 'hideButton'     : true,
+   // 'rollover'       : true,
+    'wmode'          : 'transparent' ,
+    onComplete       : function (event, queueID, fileObj, response, data)
+     { 
+      $('<li></li>').appendTo('.files').text(response); 
+     }, 
+    onError          : function(event, queueID, fileObj)
+     { 
+       alert("文件:" + fileObj.name + " 上传失败"); 
+     } 
+// onCancel         : function(event, queueID, fileObj)
+// { 
+//     alert("取消文件：" + fileObj.name); 
+// } 
+   }); 
+
+要注意的是，我的script属性值是一个请求路径，我发现在我设置了同时上传多个文件后(比如3)，并不是每请求一次去上传3个文件，而仍然是执行3次请求，请求一次上传一个文件。这也没办法，uplodify有那么多回调函数，要是一次处理多个，那回调函数的参数就不知道拿哪个了，因为这些参数都不是数组。 
+
+也就是说，无论你设置同时上传几个文件，它都会一个一个去请求并上传，只是表面上感觉好像有多个线程同时在处理上传请求一样，只是表象而已。而且如果你把simUploadLimit设置过大就会经常出错，我设置成5的时候经常会有一两个文件上传失败。 

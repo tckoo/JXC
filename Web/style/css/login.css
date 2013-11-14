@@ -1,0 +1,12 @@
+﻿@import "../global.css";
+body{background-color: #246DBA;}
+.login_box {width: 100%;margin:50px auto 0px auto;}
+.login_box .t{position:relative;width: 800px;background: url(../images/login_top.gif) no-repeat;height: 162px;margin:0 auto;}
+.login_box .t h4{position:absolute;left:275px;bottom:40px;width:250px;text-align:center;color:#fff;font:bold 25px "微软雅黑","宋体", "Arial Narrow", HELVETICA;}
+.login_box .c{width: 800px;background: url(../images/login_connt.jpg) no-repeat;height: 188px;margin:0 auto;}
+.login_box .b{width: 800px;background: url(../images/login_bootom.gif) no-repeat left top;height: 157px;margin:0 auto;}
+
+.txt{font-size:12px;font-weight:normal;height:24px;line-height:1.5em;color:#999;width:170px;padding-left:5px;}
+
+input {border: 1px solid #BCCBDE;height: 24px;line-height: 24px;text-indent: 0px;}
+.login_btn{width:60px;height:26px;background:url(../images/login.jpg) no-repeat;border:none;cursor:pointer;}
